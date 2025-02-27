@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd Checker</title>
+    <script>
+        function checkEvenOrOdd() {
+            // Get the number from the input
+            const number = parseInt(document.getElementById("numberInput").value, 10);
+
+            // Check if the input is a valid number
+            if (isNaN(number)) {
+                document.getElementById("result").innerText = "Please enter a valid number.";
+                return;
+            }
+
+            // Determine if the number is even or odd
+            const result = (number % 2 === 0) ? "Even" : "Odd";
+
+            // Display the result
+            document.getElementById("result").innerText = "The number is: " + result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Even or Odd Checker</h1>
+    <form onsubmit="event.preventDefault(); checkEvenOrOdd();">
+        <label for="numberInput">Enter a number:</label>
+        <input type="number" id="numberInput" required>
+        <button type="submit">Check</button>
+    </form>
+    <p id="result"></p>
+</body>
+</html>
