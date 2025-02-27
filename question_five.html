@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Count</title>
+    <script>
+        function countWords() {
+            // Get the input value
+            const sentence = document.getElementById("sentenceInput").value;
+
+            // Split the sentence into words using whitespace as the delimiter
+            const words = sentence.trim().split(/\s+/);
+
+            // Count the number of words
+            const wordCount = words.filter(word => word.length > 0).length;
+
+            // Display the result
+            document.getElementById("result").innerText = "Number of words: " + wordCount;
+        }
+    </script>
+</head>
+<body>
+    <h1>Word Count Tool</h1>
+    <form onsubmit="event.preventDefault(); countWords();">
+        <label for="sentenceInput">Enter a sentence:</label>
+        <input type="text" id="sentenceInput" required>
+        <button type="submit">Count Words</button>
+    </form>
+    <p id="result"></p>
+</body>
+</html>
